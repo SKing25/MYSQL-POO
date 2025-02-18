@@ -12,6 +12,6 @@ public class DataArticulo {
 
     public String EliminarArticulo() {
         Conexion objmod = new Conexion();
-        String cad = "delete from articulo where art_cod ='" + this.getArt_cod()
+        String cad = "delete from articulo where art_cod ='" + this.getArt_cod();
     }
 }
