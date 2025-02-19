@@ -2,7 +2,7 @@ package Capa_Presentacion;
 
 import Capa_Negocio.DataArticulo;
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Formulario_Articulo extends javax.swing.JFrame {
