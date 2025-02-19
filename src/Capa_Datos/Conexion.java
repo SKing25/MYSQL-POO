@@ -26,7 +26,13 @@ public class Conexion {
             Connection cn = DriverManager.getConnection(url, usuario, pwd);
             PreparedStatement da = cn.prepareStatement(Cad);
             int r = da.executeUpdate();
-            return "Se afectaron " + r + " filas";
+            if (r == 1){
+                return "Se afecto " + r + " fila";
+            }
+            else if (r == 0){
+                return "No se afecto ninguna fila";
+            }
+            else return "Se afectaron " + r + " filas";
         }
         catch (SQLException e) {
             javax.swing.JOptionPane.showMessageDialog(null, e.getMessage());

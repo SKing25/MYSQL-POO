@@ -4,7 +4,6 @@ import Capa_Negocio.DataArticulo;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.xml.crypto.Data;
 
 public class Formulario_Articulo extends javax.swing.JFrame {
 
@@ -87,17 +86,6 @@ public class Formulario_Articulo extends javax.swing.JFrame {
 
         jLabel6.setText("Marca: ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null}
-                },
-                new String [] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
-                }
-        ));
         jScrollPane1.setViewportView(jTable1);
 
         jBNuevo.setText("Nuevo");
@@ -132,6 +120,12 @@ public class Formulario_Articulo extends javax.swing.JFrame {
         jBSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSalirActionPerformed(evt);
+            }
+        });
+
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable1MousePressed(evt);
             }
         });
 
@@ -217,7 +211,11 @@ public class Formulario_Articulo extends javax.swing.JFrame {
 
     private void jBNuevoActionPerformed(java.awt.event.ActionEvent evt) {
         LimpiarCajasTexto();
-        jBNuevo.setEnabled(true);
+        if ( this.jTable1.getRowCount() + 1 >= 10) this.TFCodigo.setText("A00" + (this.jTable1.getRowCount() + 1));
+        else if ( this.jTable1.getRowCount() >= 100) this.TFCodigo.setText("A0" + (this.jTable1.getRowCount() + 1));
+        else if ( this.jTable1.getRowCount() >= 1000) this.TFCodigo.setText("A" + (this.jTable1.getRowCount() + 1));
+        else this.TFCodigo.setText("A000" + (this.jTable1.getRowCount() + 1));
+        jBGrabar.setEnabled(true);
     }
 
     private void jBGrabarActionPerformed(java.awt.event.ActionEvent evt) {

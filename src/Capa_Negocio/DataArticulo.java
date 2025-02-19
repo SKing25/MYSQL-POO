@@ -23,15 +23,15 @@ public class DataArticulo {
         String cad = "Insert into articulo values('" + this.getArt_cod()
                 + "','" + this.getArt_nom() + "','" + this.getArt_uni() + "','"
                 + this.getArt_pre() + "','" + this.getArt_stk() + "','"
-                + this.getArt_marca();
+                + this.getArt_marca() + "')";
         return objmod.Ejecutar(cad);
     }
 
     public String EditarArticulo() {
         Conexion objmod = new Conexion();
         String cad = "Update articulo set art_nom ='" + this.getArt_nom()
-                + "',art_uni'" + this.getArt_uni() + "',art_pre'" + this.getArt_pre()
-                + "',art_stk'" + this.getArt_stk() + "',art_marca'" + this.getArt_marca()
+                + "',art_uni ='" + this.getArt_uni() + "',art_pre ='" + this.getArt_pre()
+                + "',art_stk ='" + this.getArt_stk() + "',art_marca ='" + this.getArt_marca()
                 + "' where art_cod ='" + this.getArt_cod() + "'";
         return objmod.Ejecutar(cad);
     }
