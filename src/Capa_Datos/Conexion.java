@@ -2,7 +2,7 @@ package Capa_Datos;
 import java.sql.*;
 
 public class Conexion {
-    private final String url = "jdbc:mysql://localhost:3306/ventas22";
+    private final String url = "jdbc:mysql://localhost:3306/ventas";
     private final String usuario = "root";
     private final String pwd = "";
 
