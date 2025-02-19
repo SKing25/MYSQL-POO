@@ -1,5 +1,4 @@
 package Capa_Datos;
-
 import java.sql.*;
 
 public class Conexion {
